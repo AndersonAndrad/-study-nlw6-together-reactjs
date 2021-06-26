@@ -1,9 +1,11 @@
 // dependencies
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 // pages
-import { Home } from './pages/Home.page';
+import { Home } from './pages/Home.page'
 import { NewRoom } from './pages/NewRoom.page'
+import { Room } from './pages/Room.page'
+import { AdminRoom } from './pages/AdminRoom.page'
 
 // styles
 import './styles/global.scss'
@@ -18,8 +20,12 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <Route  path='/' exact component={Home}/>
-        <Route  path='/rooms/new' component={NewRoom}/> 
+        <Switch>
+          <Route  path='/' exact component={Home}/>
+          <Route  path='/rooms/new' exact component={NewRoom}/> 
+          <Route  path='/rooms/:id' component={Room}/> 
+          <Route  path='/admin/rooms/:id' component={AdminRoom}/> 
+        </Switch>
       </AuthContextProvider>
     </BrowserRouter>
   );
