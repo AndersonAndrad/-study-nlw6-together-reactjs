@@ -1,46 +1,80 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align='center'>
+  <img src='https://raw.githubusercontent.com/AndersonAndrad/-study-nlw6-together-reactjs/f9d3e43a9d47be1afbe7500d958f6a9f5b99bc34/src/assets/images/logo.svg'>
+</p>
 
-## Available Scripts
+<div align='center' margin="2px">
+  <h1>Welcome to the let me ask</h1>
+</div>
 
-In the project directory, you can run:
+## Project description
+Project to create real time questions rooms
 
-### `yarn start`
+## technologies used
+- ReactJs
+- FireBase
+- SCSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Presenting application
+**Home**
+<p>
+  <img src='https://raw.githubusercontent.com/AndersonAndrad/-study-nlw6-together-reactjs/master/src/assets/system-images/home.png'>
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Create room**
+<p>
+  <img src='https://raw.githubusercontent.com/AndersonAndrad/-study-nlw6-together-reactjs/master/src/assets/system-images/new_room.png'>
+</p>
 
-### `yarn test`
+**Administrator's view**
+<p>
+  <img src='https://raw.githubusercontent.com/AndersonAndrad/-study-nlw6-together-reactjs/master/src/assets/system-images/room_admin.png'>
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**User's view**
+<p>
+  <img src='https://raw.githubusercontent.com/AndersonAndrad/-study-nlw6-together-reactjs/master/src/assets/system-images/room_user.png'>
+</p>
 
-### `yarn build`
+## How I can use this project in five steps ?
+- _first_ fork the repository for your account or clone with the next command
+```bash
+  git clone https://github.com/AndersonAndrad/-study-nlw6-together-reactjs 
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - _second_ install all application dependencies with the next command
+ ```bash
+  yarn install
+ ```
+ - _third_ copy and past the file ".env.example" and rename to .env.local, then add all variables from your firebase repository (Obs: if you haven't created it, follow the steps to create it in the firebase itself, [click here](https://firebase.google.com/?gclid=CjwKCAjww-CGBhALEiwAQzWxOsmR3RNx8bE6fQjd9NcuP94b3qbVVxTKAIXZu3-BBX_VKwJi5dtmpxoCoPEQAvD_BwE&gclsrc=aw.ds) to be redirected)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - _forth_ run the command to start the server (as a developer)
+ ```bash
+  yarn start
+ ```
+## Can I make any improvements to the application ? 
+yes, make the modification you think necessary, if you can make a pull request for us, we will be happy to add your improvements.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Things that the application has so far
+  ### General 
+ - SingIn Google account
+ - Enter the room with room code
+ - Create a room
 
-### `yarn eject`
+  ### Users
+  - like question
+  - make a question
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ### Admin 
+  - Delete question
+  - Answer question
+  - Highlight question
+  - Close room
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future features
+- [ ] Dark theme
+- [ ] Enter in room closed
+- [ ] Others ways to SingIn
+- [ ] Adaptable to screen
+- [ ] List all asked questions
+- [ ] List all answered questions
