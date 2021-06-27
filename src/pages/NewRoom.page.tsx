@@ -8,7 +8,7 @@ import IllustrationImage from '../assets/images/illustration.svg'
 import LogoImage from '../assets/images/logo.svg'
 
 // hooks
-import { UserAuth } from '../hooks/UseAuth'
+import { useAuth } from '../hooks/useAuth'
 
 // services
 import { database } from '../services/firebase'
@@ -22,7 +22,7 @@ import '../styles/auth.scss'
 export function NewRoom(){
   const [ newRoom, setNewRoom ] = useState('')
 
-  const { user } = UserAuth()
+  const { user } = useAuth()
   const history = useHistory();
 
   async function handleCreateRoom(event: FormEvent){

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 import { database } from '../services/firebase'
 
 // hooks
-import { UserAuth } from '../hooks/UseAuth'
+import { useAuth } from '../hooks/useAuth'
 
 // images
 import IllustrationImage from '../assets/images/illustration.svg'
@@ -23,7 +23,7 @@ export function Home(){
   const [ roomCode, setRoomCode ] = useState('')
 
   const history = useHistory()
-  const {user, singInWithGoogle} = UserAuth()
+  const {user, singInWithGoogle} = useAuth()
   
   async function handleCreateRoom(){
     if(!user){

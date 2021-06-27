@@ -1,10 +1,10 @@
 // dependencies
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 // hooks
-import { UserAuth } from '../hooks/UseAuth'
-import { UserRoom } from '../hooks/UserRoom'
+import { useAuth } from '../hooks/useAuth'
+import { useRoom } from '../hooks/useRoom'
 
 // images
 import Logo from '../assets/images/logo.svg'
@@ -24,9 +24,9 @@ interface IParams {
 
 export function AdminRoom (){
   const { id } = useParams<IParams>()
-  const { user } = UserAuth()
+  const { user } = useAuth()
   const [ newQuestion, setNewQuestion ] = useState('')
-  const { questions, title } = UserRoom({ room: { id } })
+  const { questions, title } = useRoom( id )
 
   return(
     <div id="page-room">

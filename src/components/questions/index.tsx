@@ -1,10 +1,10 @@
 // dependencies
-import { HtmlHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 
 // styles
 import '../../styles/question.scss'
 
-interface IQuestion extends HtmlHTMLAttributes<HTMLDivElement> {
+interface IQuestion{
   content: string;
   author: {
     name: string;
