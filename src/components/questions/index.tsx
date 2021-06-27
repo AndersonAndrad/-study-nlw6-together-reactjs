@@ -1,5 +1,6 @@
 // dependencies
 import { ReactNode } from "react";
+import cx from 'classnames'
 
 // styles
 import '../../styles/question.scss'
@@ -10,12 +11,14 @@ interface IQuestion{
     name: string;
     avatar: string;
   }
-  children?: ReactNode
+  children?: ReactNode;
+  isAnswered?: boolean;
+  isHighlighted?: boolean;
 }
 
-export default function Question({ content, author, children }: IQuestion){
+export default function Question({ content, author, children, isAnswered, isHighlighted }: IQuestion){
   return (
-    <div className="question">
+    <div className={cx('question', { answered: isAnswered }, { highlighted: isHighlighted && !isAnswered})}>
       <p>{content}</p>
       <footer>
         <div className="user-info">
