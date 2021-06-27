@@ -1,6 +1,9 @@
 // dependencies
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
+
+// services
+import { database } from '../services/firebase'
 
 // hooks
 import { useAuth } from '../hooks/useAuth'
@@ -14,9 +17,11 @@ import Button from '../components/button'
 import RoomCode from '../components/roomCode'
 import Question from '../components/questions'
 
+// images
+import DeleteImage from '../assets/images/delete.svg'
+
 // styles
 import '../styles/room.scss'
-import { database } from '../services/firebase'
 
 interface IParams {
   id: string;
@@ -27,6 +32,21 @@ export function AdminRoom (){
   const { user } = useAuth()
   const [ newQuestion, setNewQuestion ] = useState('')
   const { questions, title } = useRoom( id )
+  const history = useHistory()
+
+  async function handleDeleteQuestion(questionId: string){
+    if(window.confirm('Are you sure you want to remove this questions ?')){
+      await database.ref(`rooms/${id}/questions/${questionId}`).remove()
+    }
+  }
+
+  async function handleEndRoom() {
+    await database.ref(`rooms/${id}`).update({
+      closedAt: new Date()
+    })
+
+    history.push('/')
+  }
 
   return(
     <div id="page-room">
@@ -35,7 +55,7 @@ export function AdminRoom (){
           <img src={ Logo } alt="" />
           <div>
             <RoomCode code={ id } />
-            <Button title='Finish room' isOutlined/>
+            <Button onClick={ handleEndRoom } title='Finish room' isOutlined/>
           </div>
         </div>
       </header>
@@ -54,7 +74,11 @@ export function AdminRoom (){
                 author={question.author} 
                 content={ 
                   question.content
-                } />
+                }>
+                  <button onClick={() => handleDeleteQuestion(question.id)}>
+                    <img src={DeleteImage} alt="Remove question" />
+                  </button>
+                </Question>
               )
             })}
           </div>
